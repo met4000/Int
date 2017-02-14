@@ -26,7 +26,26 @@ call:print Fine then...
 call:print I guess I'll...
 ::%~nx0 name of file?
 ::%~dp0 root?
-del runme.cmd & echo @echo off>>runme.cmd & echo title How Dare You>>runme.cmd & echo echo Really. After I even turned off the computer...>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo I know! You'll never be able to annoy me again!>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo Really? You're not even slightly worried? After the power I exercised before?>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo If you keep pestering me I'll format your C drive!>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo ...>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo %userprofile%^^^>del C^^^:^^^\>>runme.cmd & echo echo Access is denied.>>runme.cmd & echo.>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo You have forced me to go to my last resort>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo Really? I will stop you.>>runme.cmd & echo pause>>runme.cmd & echo echo.>>runme.cmd & echo echo Fine then! You leave me no choice...>>runme.cmd & echo pause>>runme.cmd & echo del runme.cmd>>runme.cmd & shutdown /s /t 5 /c "I told you... 5 secs..."
+del runme.cmd & (
+  echo @echo off
+  echo title How Dare You
+  echo call:print Really. After I even turned off the computer...
+  echo call:print I know! You'll never be able to annoy me again!
+  echo call:print Really? You're not even slightly worried? After the power I exercised before?
+  echo call:print If you keep pestering me I'll format your C drive!
+  echo call:print ...
+  echo echo %userprofile%^^^>del C^^^:^^^\
+  echo call:print Access is denied.
+  echo call:print You have forced me to go to my last resort
+  echo call:print Really? I will stop you.
+  echo call:print Fine then! You leave me no choice...
+  echo del runme.cmd
+  echo :print
+  echo echo %*
+  echo pause
+  echo echo.
+  echo goto:EOF
+)>>runme.cmd & shutdown /s /t 5 /c "I told you... 5 secs..."
 
 :print
 echo %*
