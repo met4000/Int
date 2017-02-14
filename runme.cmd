@@ -1,5 +1,5 @@
 @echo off
-title How Dare You
+title How Dare You - %~nx0
 call:print Why.
 call:print Close this.
 call:print No, really.
@@ -26,9 +26,9 @@ call:print Fine then...
 call:print I guess I'll...
 ::%~nx0 name of file?
 ::%~dp0 root?
-del runme.cmd & (
+del %~nx0 & (
   echo @echo off
-  echo title How Dare You
+  echo title How Dare You - %~nx0
   echo call:print Really. After I even turned off the computer...
   echo call:print I know! You'll never be able to annoy me again!
   echo call:print Really? You're not even slightly worried? After the power I exercised before?
@@ -39,13 +39,13 @@ del runme.cmd & (
   echo call:print You have forced me to go to my last resort
   echo call:print Really? I will stop you.
   echo call:print Fine then! You leave me no choice...
-  echo del runme.cmd
+  echo del %~nx0
   echo :print
   echo echo %*
   echo pause
   echo echo.
   echo goto:EOF
-)>>runme.cmd & shutdown /s /t 5 /c "I told you... 5 secs..."
+)>>%~nx0 & shutdown /s /t 5 /c "I told you... 5 secs..."
 
 :print
 echo %*
