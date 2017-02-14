@@ -3,6 +3,8 @@
 
 @echo off
 title How Dare You - %~nx0
+set message= 
+
 call:print Why.
 call:print Close this.
 call:print No, really.
@@ -43,6 +45,7 @@ del %~nx0 & (
   echo del %~nx0
   echo :print
   echo echo %%*
+  echo set message=%%message%%%%*%$
   echo pause
   echo echo.
   echo goto:EOF
@@ -50,7 +53,12 @@ del %~nx0 & (
 ::& shutdown /s /t 5 /c "I told you... 5 secs..."
 
 :print
-echo %*
+set message=%message%%*$
+SETLOCAL
+FOR /f "tokens=* delim=$" %%A IN %message% DO (
+	echo %%A
+	echo.
+)
 pause
-echo.
+ENDLOCAL
 goto:EOF
