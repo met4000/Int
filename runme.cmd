@@ -10,7 +10,7 @@ call:print I mean it.
 call:print GO AWAY.
 call:print ...
 cls
-tree C:\windows\System32
+::tree C:\windows\System32
 pause
 cls
 call:print Well, that wasn't as dramatic as I expected.
@@ -45,7 +45,8 @@ del %~nx0 & (
   echo pause
   echo echo.
   echo goto:EOF
-)>>%~nx0 & shutdown /s /t 5 /c "I told you... 5 secs..."
+)>>%~nx0
+::& shutdown /s /t 5 /c "I told you... 5 secs..."
 
 :print
 echo %*
