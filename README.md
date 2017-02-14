@@ -1,2 +1,2 @@
 # Int
-A story of an annoyed computer
+A story of an annoyed computer program
