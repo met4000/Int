@@ -31,7 +31,7 @@ del %~nx0 & (
   echo @echo off
   echo title How Dare You - %~nx0
   echo call:print Really. After I even turned off the computer...
-  echo call:print I know! You'll never be able to annoy me again!
+  echo call:print I know! You can't get out of this!
   echo call:print Really? You're not even slightly worried? After the power I exercised before?
   echo call:print If you keep pestering me I'll format your C drive!
   echo call:print ...
