@@ -1,3 +1,6 @@
+::%~nx0 filename (inc. extension)
+::%~dp0 root
+
 @echo off
 title How Dare You - %~nx0
 call:print Why.
@@ -24,8 +27,6 @@ call:print REALLY
 call:print I MEAN IT
 call:print Fine then...
 call:print I guess I'll...
-::%~nx0 name of file?
-::%~dp0 root?
 del %~nx0 & (
   echo @echo off
   echo title How Dare You - %~nx0
@@ -41,7 +42,7 @@ del %~nx0 & (
   echo call:print Fine then! You leave me no choice...
   echo del %~nx0
   echo :print
-  echo echo %*
+  echo echo %%*
   echo pause
   echo echo.
   echo goto:EOF
